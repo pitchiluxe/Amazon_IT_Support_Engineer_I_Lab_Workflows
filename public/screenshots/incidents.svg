@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0b1020;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1f3a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg4)"/>
+
+  <rect x="0" y="0" width="240" height="800" fill="#0f1428"/>
+  <text x="20" y="40" font-family="Arial" font-size="18" font-weight="bold" fill="#fff">IT Support Lab</text>
+
+  <!-- Header -->
+  <g transform="translate(280, 30)">
+    <text x="0" y="30" font-family="Arial" font-size="24" font-weight="bold" fill="#fff">🚨 Incident Queue</text>
+    <text x="0" y="55" font-family="Arial" font-size="14" fill="#9ca3af">4 active incidents • 2 critical</text>
+  </g>
+
+  <!-- Filters -->
+  <g transform="translate(280, 90)">
+    <rect width="880" height="50" fill="#1a1f3a" rx="8"/>
+    <g font-family="Arial" font-size="12">
+      <rect x="20" y="10" width="60" height="30" fill="#3b82f6" rx="4"/>
+      <text x="50" y="30" text-anchor="middle" fill="#fff">All (4)</text>
+
+      <rect x="100" y="10" width="80" height="30" fill="#252d4a" rx="4"/>
+      <text x="140" y="30" text-anchor="middle" fill="#9ca3af">P1 (1)</text>
+
+      <rect x="200" y="10" width="80" height="30" fill="#252d4a" rx="4"/>
+      <text x="240" y="30" text-anchor="middle" fill="#9ca3af">P2 (2)</text>
+
+      <rect x="300" y="10" width="80" height="30" fill="#252d4a" rx="4"/>
+      <text x="340" y="30" text-anchor="middle" fill="#9ca3af">P3 (1)</text>
+
+      <rect x="700" y="10" width="160" height="30" fill="#252d4a" rx="4"/>
+      <text x="780" y="30" text-anchor="middle" fill="#9ca3af">🔍 Search incidents...</text>
+    </g>
+  </g>
+
+  <!-- Incident List -->
+  <g transform="translate(280, 160)">
+    <!-- P1 Incident -->
+    <g transform="translate(0, 0)">
+      <rect width="880" height="100" fill="#1a1f3a" rx="8"/>
+      <rect x="0" y="0" width="6" height="100" fill="#ef4444" rx="3"/>
+      <text x="25" y="25" font-family="Arial" font-size="14" font-weight="bold" fill="#fff">INC-2024-001</text>
+      <rect x="25" y="35" width="40" height="20" fill="#ef4444" rx="4"/>
+      <text x="45" y="49" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#fff">P1</text>
+      <text x="80" y="49" font-family="Arial" font-size="12" fill="#9ca3af">Warehouse DC - Complete outage</text>
+
+      <text x="25" y="75" font-family="Arial" font-size="12" fill="#9ca3af">Reported: 14:23 • SLA: 15:23</text>
+      <text x="200" y="75" font-family="Arial" font-size="12" fill="#ef4444">⏱ 00:42 remaining</text>
+      <text x="350" y="75" font-family="Arial" font-size="12" fill="#9ca3af">Assigned: You</text>
+
+      <rect x="780" y="30" width="80" height="30" fill="#ef4444" rx="6"/>
+      <text x="820" y="49" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#fff">TAKE</text>
+    </g>
+
+    <!-- P2 Incident 1 -->
+    <g transform="translate(0, 115)">
+      <rect width="880" height="100" fill="#1a1f3a" rx="8"/>
+      <rect x="0" y="0" width="6" height="100" fill="#f97316" rx="3"/>
+      <text x="25" y="25" font-family="Arial" font-size="14" font-weight="bold" fill="#fff">INC-2024-002</text>
+      <rect x="25" y="35" width="40" height="20" fill="#f97316" rx="4"/>
+      <text x="45" y="49" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#fff">P2</text>
+      <text x="80" y="49" font-family="Arial" font-size="12" fill="#9ca3af">Print server queue overflow</text>
+
+      <text x="25" y="75" font-family="Arial" font-size="12" fill="#9ca3af">Reported: 14:45 • SLA: 16:45</text>
+      <text x="200" y="75" font-family="Arial" font-size="12" fill="#10b981">✓ On Track</text>
+      <text x="350" y="75" font-family="Arial" font-size="12" fill="#9ca3af">Assigned: Mike T.</text>
+
+      <rect x="780" y="30" width="80" height="30" fill="#252d4a" rx="6"/>
+      <text x="820" y="49" text-anchor="middle" font-family="Arial" font-size="12" fill="#9ca3af">VIEW</text>
+    </g>
+
+    <!-- P2 Incident 2 -->
+    <g transform="translate(0, 230)">
+      <rect width="880" height="100" fill="#1a1f3a" rx="8"/>
+      <rect x="0" y="0" width="6" height="100" fill="#f97316" rx="3"/>
+      <text x="25" y="25" font-family="Arial" font-size="14" font-weight="bold" fill="#fff">INC-2024-003</text>
+      <rect x="25" y="35" width="40" height="20" fill="#f97316" rx="4"/>
+      <text x="45" y="49" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#fff">P2</text>
+      <text x="80" y="49" font-family="Arial" font-size="12" fill="#9ca3af">AD replication failure site-2</text>
+
+      <text x="25" y="75" font-family="Arial" font-size="12" fill="#9ca3af">Reported: 15:02 • SLA: 17:02</text>
+      <text x="200" y="75" font-family="Arial" font-size="12" fill="#10b981">✓ On Track</text>
+      <text x="350" y="75" font-family="Arial" font-size="12" fill="#9ca3af">Assigned: Unassigned</text>
+
+      <rect x="780" y="30" width="80" height="30" fill="#3b82f6" rx="6"/>
+      <text x="820" y="49" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#fff">CLAIM</text>
+    </g>
+
+    <!-- P3 Incident -->
+    <g transform="translate(0, 345)">
+      <rect width="880" height="100" fill="#1a1f3a" rx="8"/>
+      <rect x="0" y="0" width="6" height="100" fill="#eab308" rx="3"/>
+      <text x="25" y="25" font-family="Arial" font-size="14" font-weight="bold" fill="#fff">INC-2024-004</text>
+      <rect x="25" y="35" width="40" height="20" fill="#eab308" rx="4"/>
+      <text x="45" y="49" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#000">P3</text>
+      <text x="80" y="49" font-family="Arial" font-size="12" fill="#9ca3af">VPN slow on MacBooks</text>
+
+      <text x="25" y="75" font-family="Arial" font-size="12" fill="#9ca3af">Reported: 15:30 • SLA: Next shift</text>
+      <text x="200" y="75" font-family="Arial" font-size="12" fill="#10b981">✓ On Track</text>
+      <text x="350" y="75" font-family="Arial" font-size="12" fill="#9ca3af">Assigned: Sarah K.</text>
+
+      <rect x="780" y="30" width="80" height="30" fill="#252d4a" rx="6"/>
+      <text x="820" y="49" text-anchor="middle" font-family="Arial" font-size="12" fill="#9ca3af">VIEW</text>
+    </g>
+  </g>
+</svg>
