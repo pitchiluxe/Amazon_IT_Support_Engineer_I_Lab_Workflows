@@ -169,6 +169,274 @@ body {
   animation: slide-in 0.3s ease-out;
 }
 
+/* ===== Landing page animations ===== */
+
+/* Scroll reveal — element starts hidden, .is-visible triggers the in-state */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-scale.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* Hero entrance — staggered fade/slide up */
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero-rise {
+  opacity: 0;
+  animation: hero-rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Animated gradient text */
+@keyframes gradient-pan {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.text-gradient {
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    #8b5cf6,
+    #06b6d4,
+    var(--accent)
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: gradient-pan 8s ease infinite;
+}
+
+/* Panning grid background */
+@keyframes grid-pan {
+  from { background-position: 0 0; }
+  to { background-position: 48px 48px; }
+}
+.bg-grid {
+  background-image:
+    linear-gradient(to right, var(--border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+  background-size: 48px 48px;
+  animation: grid-pan 6s linear infinite;
+}
+
+/* Floating glow orbs */
+@keyframes float-orb {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -40px) scale(1.08); }
+  66% { transform: translate(-20px, 20px) scale(0.95); }
+}
+.orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(60px);
+  opacity: 0.5;
+  animation: float-orb 14s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Blinking terminal cursor */
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+.terminal-cursor {
+  display: inline-block;
+  width: 0.6ch;
+  animation: blink 1s step-end infinite;
+}
+
+/* Shimmer sweep for buttons/cards */
+@keyframes shimmer {
+  0% { transform: translateX(-120%); }
+  100% { transform: translateX(220%); }
+}
+.shimmer-wrap {
+  position: relative;
+  overflow: hidden;
+}
+.shimmer-wrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transform: translateX(-120%);
+  animation: shimmer 3.2s ease-in-out infinite;
+}
+
+/* Animated gradient border (CTA card) */
+@keyframes border-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.gradient-border {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: -150%;
+  background: conic-gradient(
+    from 0deg,
+    var(--accent),
+    #8b5cf6,
+    #06b6d4,
+    var(--accent)
+  );
+  animation: border-spin 6s linear infinite;
+  z-index: 0;
+}
+.gradient-border > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Soft float for hero card */
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.float-y {
+  animation: float-y 6s ease-in-out infinite;
+}
+
+/* Pulse ring for badge dot */
+@keyframes ping-ring {
+  0% { transform: scale(1); opacity: 0.7; }
+  80%, 100% { transform: scale(2.4); opacity: 0; }
+}
+.ping-ring {
+  animation: ping-ring 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Word-by-word headline reveal */
+@keyframes word-rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.4em) rotateX(-40deg);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+    filter: blur(0);
+  }
+}
+.word-rise {
+  display: inline-block;
+  opacity: 0;
+  animation: word-rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  transform-origin: bottom;
+}
+
+/* Glow pulse for CTA */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
+  50% { box-shadow: 0 0 32px 4px rgba(59, 130, 246, 0.25); }
+}
+.glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* Slow spin for decorative ring */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+/* Fade + scale for auto-advancing gallery handled inline; this is for
+   testimonial card entrance. */
+@keyframes card-pop {
+  from { opacity: 0; transform: scale(0.96) translateY(12px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+.card-pop {
+  animation: card-pop 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
 /* Focus rings */
 *:focus-visible {
   outline: 2px solid var(--accent);

@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
   },
   // Ensure trailing slashes for static export compatibility
   trailingSlash: true,
+  allowedDevOrigins: ["127.0.0.1", "localhost"],
 };
 
 export default nextConfig;
